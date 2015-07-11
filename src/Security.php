@@ -258,7 +258,7 @@ class Security implements ObjectInterface
         }
         $hashLength = StringHelper::byteLength($test);
         if (is_string($length) && preg_match('{^\d{1,16}$}', $length)) {
-            $length = (int) $length;
+            $length = (int)$length;
         }
         if (!is_integer($length) || $length < 0 || $length > 255 * $hashLength) {
             throw new SecurityException('Invalid length');
@@ -313,13 +313,13 @@ class Security implements ObjectInterface
             throw new SecurityException('Failed to generate HMAC with hash algorithm: ' . $algo);
         }
         if (is_string($iterations) && preg_match('{^\d{1,16}$}', $iterations)) {
-            $iterations = (int) $iterations;
+            $iterations = (int)$iterations;
         }
         if (!is_integer($iterations) || $iterations < 1) {
             throw new SecurityException('Invalid iterations');
         }
         if (is_string($length) && preg_match('{^\d{1,16}$}', $length)) {
-            $length = (int) $length;
+            $length = (int)$length;
         }
         if (!is_integer($length) || $length < 0) {
             throw new SecurityException('Invalid length');
@@ -600,7 +600,7 @@ class Security implements ObjectInterface
      */
     protected function generateSalt($cost = 13)
     {
-        $cost = (int) $cost;
+        $cost = (int)$cost;
         if ($cost < 4 || $cost > 31) {
             throw new SecurityException('Cost must be between 4 and 31.');
         }
